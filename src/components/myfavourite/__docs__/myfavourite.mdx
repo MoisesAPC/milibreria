@@ -1,0 +1,26 @@
+import { Canvas, Meta } from "@storybook/blocks";
+import * as MyFavourite from "./myfavourite.stories.tsx";
+import Example from "./example";
+
+<Meta of={MyFavourite} />
+
+# MyFavourite
+
+Componente de botón de favorito con diferentes especializaciones.
+
+## Examples
+
+<Canvas of={MyFavourite.IconoFavoritoRojo} />
+
+```tsx
+import Example from './Example';
+
+function App() {
+  return (
+    <Example
+      color="green"
+      disabled={false}
+      onClick={() => alert("Favorito clicked")}
+    />
+  );
+}

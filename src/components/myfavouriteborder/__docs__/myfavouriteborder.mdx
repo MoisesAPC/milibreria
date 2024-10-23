@@ -1,0 +1,26 @@
+import { Canvas, Meta } from "@storybook/blocks";
+import * as MyFavouriteBorder from "./myfavouriteborder.stories.tsx";
+import Example from "./example";
+
+<Meta of={MyFavouriteBorder} />
+
+# MyFavouriteBorder
+
+Componente de botón de favorito (sin relleno) con diferentes especializaciones.
+
+## Examples
+
+<Canvas of={MyFavouriteBorder.IconoFavoritoBorderVerde} />
+
+```tsx
+import Example from './Example';
+
+function App() {
+  return (
+    <Example
+      color="green"
+      disabled={false}
+      onClick={() => alert("Favorito (sin relleno) clicked")}
+    />
+  );
+}
