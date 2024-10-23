@@ -1,13 +1,25 @@
 import React from "react";
-import MyFavouriteBorder, { MyFavouriteBorderProps } from "../myfavouriteborder";
+import MoisesAntonioPC, { MoisesAntonioPCProps } from "../moisesantoniopc";
 
-function Example(props: MyFavouriteBorderProps) {
+function Example(props: MoisesAntonioPCProps) {
   return (
-    <MyFavouriteBorder
-      color={props.color}
-      disabled={props.disabled}
-      onClick={props.onClick}
+    <MoisesAntonioPC
+      titulo={props.titulo}
+      subcabecera={props.subcabecera}
+      texto={props.texto}
+      imagen={props.imagen}
+      textoBoton={props.textoBoton}
+      onFavorite={props.onFavorite}
+      onShare={props.onShare}
+      onAction={props.onAction}
+      desactivarCompartir={props.desactivarCompartir}
+      desactivarMeGusta={props.desactivarMeGusta}
+      desactivarBoton={props.desactivarBoton}
+      colorBotonMeGusta={props.colorBotonMeGusta}
+      colorBotonCompartir={props.colorBotonCompartir}
+      colorBoton={props.colorBoton}
     />
   );
 }
-export default Example
+
+export default Example;

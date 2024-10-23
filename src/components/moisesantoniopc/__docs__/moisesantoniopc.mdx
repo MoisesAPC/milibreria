@@ -1,16 +1,16 @@
 import { Canvas, Meta } from "@storybook/blocks";
-import * as MyFavouriteBorder from "./myfavouriteborder.stories.tsx";
+import * as MoisesAntonioPC from "./moisesantoniopc.stories.tsx";
 import Example from "./example";
 
-<Meta of={MyFavouriteBorder} />
+<Meta of={MoisesAntonioPC} />
 
-# MyFavouriteBorder
+# MoisesAntonioPC
 
-Componente de botón de favorito (sin relleno) con diferentes especializaciones.
+Componente personalizado basado en un Card
 
 ## Examples
 
-<Canvas of={MyFavouriteBorder.IconoFavoritoBorderVerde} />
+<Canvas of={MoisesAntonioPC.ComponenteMoisesAntonioPC1} />
 
 ```tsx
 import Example from './Example';
@@ -18,9 +18,20 @@ import Example from './Example';
 function App() {
   return (
     <Example
-      color="green"
-      disabled={false}
-      onClick={() => alert("Favorito (sin relleno) clicked")}
+      titulo="Título 1"
+      subcabecera="Subcabecera 1"
+      texto="Texto de ejemplo 1"
+      imagen="src/components/moisesantoniopc/assets/paraiso.jpg"
+      textoBoton="Texto botón"
+      onFavorite={() => alert("Has hecho click en Me Gusta")}
+      onShare={() => alert("Has hecho click en Compartir")}
+      onAction={() => alert("Has hecho click en el botón genérico")}
+      desactivarCompartir={false}
+      desactivarMeGusta={false}
+      desactivarBoton={false}
+      colorBotonMeGusta="red"
+      colorBotonCompartir="blue"
+      colorBoton="green"
     />
   );
 }

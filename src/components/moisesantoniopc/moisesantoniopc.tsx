@@ -1,7 +1,7 @@
 import { MouseEventHandler } from 'react';
 import { Card, CardHeader, CardContent, CardActions, CardMedia, Typography, Button, IconButton } from '@mui/material';
 import ShareIcon from '@mui/icons-material/Share';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 export interface MoisesAntonioPCProps {
   titulo: string;
@@ -39,10 +39,10 @@ function MoisesAntonioPC(props: MoisesAntonioPCProps) {
   } = props;
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345 }} role='card'>
       <CardHeader
-        titulo={titulo}
-        subcabecera={subcabecera}
+        title={titulo}
+        subheader={subcabecera}
       />
 
       <CardMedia
@@ -65,7 +65,7 @@ function MoisesAntonioPC(props: MoisesAntonioPCProps) {
           onClick={onFavorite}
           disabled={desactivarMeGusta}
         >
-          <FavoriteBorderIcon style={{ color: colorBotonMeGusta }} />
+          <FavoriteIcon style={{ color: colorBotonMeGusta }} />
         </IconButton>
 
         <IconButton
