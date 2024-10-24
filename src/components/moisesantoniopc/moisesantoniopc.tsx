@@ -1,23 +1,23 @@
 import { MouseEventHandler } from 'react';
-import { Card, CardHeader, CardContent, CardActions, CardMedia, Typography, Button, IconButton } from '@mui/material';
+import { Card, CardHeader, CardContent, CardMedia, Typography, Button, IconButton } from '@mui/material';
 import ShareIcon from '@mui/icons-material/Share';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 
 export interface MoisesAntonioPCProps {
-  titulo: string;
-  subcabecera?: string;
-  texto: string;
-  imagen?: string;
-  onFavorite?: MouseEventHandler<HTMLButtonElement>;
-  onShare?: MouseEventHandler<HTMLButtonElement>;
-  textoBoton?: string;
-  onAction?: MouseEventHandler<HTMLButtonElement>;
-  desactivarCompartir: boolean;
-  desactivarMeGusta: boolean;
-  desactivarBoton: boolean;
-  colorBotonMeGusta?: string;
-  colorBotonCompartir?: string;
-  colorBoton?: string;
+  titulo: string; // Titulo del Card
+  subcabecera?: string; // Subcabecera del Card
+  texto: string; // Texto del Card
+  imagen?: string; // Imagen de fondo del Card
+  onFavorite?: MouseEventHandler<HTMLButtonElement>; // Función que se ejecuta al pulsar en el ícono Me Gusta
+  onShare?: MouseEventHandler<HTMLButtonElement>; // Función que se ejecuta al pulsar en el ícono Compartir
+  textoBoton?: string;  // Texto del botón genérico
+  onAction?: MouseEventHandler<HTMLButtonElement>; // Función que se ejecuta al pulsar en elbotón genérico
+  desactivarCompartir: boolean; // Desactiva el botón de Compartir
+  desactivarMeGusta: boolean; // Desactiva el botón de Me Gusta
+  desactivarBoton: boolean; // Desactiva el botón genérico
+  colorBotonMeGusta?: string; // Color del botón Me Gusta
+  colorBotonCompartir?: string; // Color del botón Compartir
+  colorBoton?: string; // Color del botón genérico
 }
 
 function MoisesAntonioPC(props: MoisesAntonioPCProps) {
@@ -39,12 +39,16 @@ function MoisesAntonioPC(props: MoisesAntonioPCProps) {
   } = props;
 
   return (
+    // El componente MoisesAntonioPC está basado en un Card de MUI
     <Card sx={{ maxWidth: 345 }} role='card'>
+
+      {/* Cabecera del Card */}
       <CardHeader
         title={titulo}
         subheader={subcabecera}
       />
 
+      {/* Imagen del Card */}
       <CardMedia
         component="img"
         height="194"
@@ -52,13 +56,14 @@ function MoisesAntonioPC(props: MoisesAntonioPCProps) {
         alt={titulo}
       />
 
+      {/* Texto del Card */}
       <CardContent>
         <Typography variant="body2" color="text.secondary">
           {texto}
         </Typography>
       </CardContent>
-
-      <CardActions disableSpacing>
+      
+      {/* Botón del Me Gusta */}
 
         <IconButton
           aria-label="add to favorites"
@@ -68,6 +73,8 @@ function MoisesAntonioPC(props: MoisesAntonioPCProps) {
           <FavoriteIcon style={{ color: colorBotonMeGusta }} />
         </IconButton>
 
+        {/* Botón de Compartir */}
+
         <IconButton
           aria-label="share"
           onClick={onShare}
@@ -75,6 +82,8 @@ function MoisesAntonioPC(props: MoisesAntonioPCProps) {
         >
           <ShareIcon style={{ color: colorBotonCompartir }} />
         </IconButton>
+
+        {/* Botón genérico */}
         
         <Button
           size="small"
@@ -85,7 +94,6 @@ function MoisesAntonioPC(props: MoisesAntonioPCProps) {
           {textoBoton}
         </Button>
         
-      </CardActions>
     </Card>
   );
 }
