@@ -1,3 +1,5 @@
+// Moisés Antonio Pestano Castro
+
 import { MouseEventHandler } from 'react';
 import { Card, CardHeader, CardContent, CardMedia, Typography, Button, IconButton } from '@mui/material';
 import ShareIcon from '@mui/icons-material/Share';
